@@ -7,9 +7,14 @@ sources:
     description: Jaffle Shop raw ecommerce data.
     tables:
       - name: raw_customers
+        identifier: customers2
       - name: raw_orders
-        loaded_at_field: ordered_at
-        freshness:
-          warn_after: {count: 24, period: hour}
+        identifier: orders
       - name: raw_items
+        identifier: items2
       - name: raw_products
+        identifier: products
+    config:
+      freshness:
+        warn_after: {count: 24, period: hour}
+      loaded_at_field: ordered_at
