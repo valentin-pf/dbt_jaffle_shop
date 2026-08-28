@@ -2,12 +2,12 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'jaffle_arch_platform'
+name: 'spielwiese'
 version: '1.0.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'BQ_jaffle_shop_raw'
+profile: 'default'
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -36,13 +36,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  jaffle_arch_platform:
+  spielwiese:
     staging:
       +materialized: view
       +group: platform
       +access: private
-      +schema: platform_staging
+      +schema: staging
     marts:
       +materialized: table
       +group: platform
-      +schema: platform_marts
+      +schema: marts
