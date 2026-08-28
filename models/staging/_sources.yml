@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: ecom
+    database: "{{ env_var('DBT_RAW_PROJECT', target.database) }}"
+    schema: "{{ env_var('DBT_RAW_DATASET', 'jaffle_shop_raw') }}"
+    description: Jaffle Shop raw ecommerce data.
+    tables:
+      - name: raw_customers
+      - name: raw_orders
+        loaded_at_field: ordered_at
+        freshness:
+          warn_after: {count: 24, period: hour}
+      - name: raw_items
+      - name: raw_products

@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'jaffle_arch_platform'
 version: '1.0.0'
 config-version: 2
 
@@ -36,6 +36,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  staging:
-    jaffle_shop:
+  jaffle_arch_platform:
+    staging:
       +materialized: view
+      +group: platform
+      +access: private
+      +schema: platform_staging
+    marts:
+      +materialized: table
+      +group: platform
+      +schema: platform_marts

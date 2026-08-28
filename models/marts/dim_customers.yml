@@ -1,0 +1,15 @@
+version: 2
+models:
+  - name: dim_customers
+    description: Public customer data product for cross-project consumption.
+    config:
+      access: public
+      contract:
+        enforced: true
+    columns:
+      - name: customer_id
+        data_type: string
+        data_tests: [not_null, unique]
+      - name: customer_name
+        data_type: string
+        data_tests: [not_null]
