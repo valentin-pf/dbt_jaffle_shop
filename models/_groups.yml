@@ -1,0 +1,7 @@
+version: 2
+
+groups:
+  - name: platform
+    owner:
+      name: Platform Team
+      email: platform@jaffle.local

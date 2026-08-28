@@ -1,0 +1,28 @@
+version: 2
+models:
+  - name: fct_orders
+    description: Public order-level fact data product.
+    config:
+      access: public
+      contract:
+        enforced: true
+    columns:
+      - name: order_id
+        data_type: string
+        data_tests: [not_null, unique]
+      - name: customer_id
+        data_type: string
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
+      - name: location_id
+        data_type: string
+      - name: order_total
+        data_type: numeric
+      - name: tax_paid
+        data_type: numeric
+      - name: ordered_date
+        data_type: date
