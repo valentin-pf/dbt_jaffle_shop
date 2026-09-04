@@ -1,7 +1,7 @@
 version: 2
 models:
   - name: dim_customers
-    description: Public customer data product for cross-project consumption.
+    description: Public customer data product for cross-project consumption. With new description
     config:
       access: public
       contract:
@@ -13,3 +13,5 @@ models:
       - name: customer_name
         data_type: string
         data_tests: [not_null]
+      - name: new_col
+        data_type: string
