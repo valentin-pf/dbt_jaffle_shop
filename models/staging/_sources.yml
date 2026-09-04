@@ -10,11 +10,12 @@ sources:
         identifier: customers2
       - name: raw_orders
         identifier: orders
+        config:
+          freshness:
+            warn_after: {count: 24, period: hour}
+          loaded_at_field: ordered_at
       - name: raw_items
         identifier: items2
       - name: raw_products
         identifier: products
-    config:
-      freshness:
-        warn_after: {count: 24, period: hour}
-      loaded_at_field: ordered_at
+    
