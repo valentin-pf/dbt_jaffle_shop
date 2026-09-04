@@ -1,5 +1,4 @@
 select
   customer_id,
-  customer_name,
-  'test' as new_col
+  customer_name
 from {{ ref('stg_customers') }}
